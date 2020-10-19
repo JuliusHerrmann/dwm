@@ -904,7 +904,9 @@ drawbar(Monitor *m)
 	}
 	w = blw = TEXTW(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeTagsNorm]);
-	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
+	char str[24];
+	sprintf(str, "%s%d", m->ltsymbol, selmon->nmaster);
+	x = drw_text(drw, x, 0, w, bh, lrpad / 2, /*m->ltsymbol strcat(str, m->ltsymbol)*/ str, 0);
 
 	if ((w = m->ww - sw - stw - x) > bh) {
 			drw_setscheme(drw, scheme[m == selmon ? SchemeInfoSel : SchemeInfoNorm]);
