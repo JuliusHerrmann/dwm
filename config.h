@@ -92,7 +92,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *quitcmd[]  = { "prompt {'Exit dwm?' 'killall dwm','Shutdown?' 'shutdown now'}", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "-d", "120", "34", NULL };
+static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "-o", "dimensions.columns=12", "-o", "dimensions.width=34", NULL };
 
 
 #include "movestack.c"
